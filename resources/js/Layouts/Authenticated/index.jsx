@@ -2,7 +2,7 @@ import React from "react"
 import SideBar from "./SideBar"
 import TopBar from "./TopBar"
 
-export default function Authenticated({children}){
+export default function Authenticated({ auth, children}){
     return <>
         <div className="mx-auto max-w-screen hidden lg:block">
             {/* Start Sidebar */}
@@ -12,7 +12,7 @@ export default function Authenticated({children}){
             {/* Start Content */}
             <div className="ml-[300px] px-[50px]">
                 <div className="py-10 flex flex-col gap-[50px]">
-                    <TopBar/>
+                    <TopBar name={auth.user.name}/>
                     {children}
                 </div>
             </div>
