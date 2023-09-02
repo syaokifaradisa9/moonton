@@ -19,7 +19,7 @@ class UserSubscription extends Model
         'snapToken'
     ];
 
-    public function subscriptionPlan(){
+    public function subscription_plan(){
         return $this->belongsTo(SubscriptionPlan::class);
     }
 }
