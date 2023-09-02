@@ -53,6 +53,7 @@ class HandleInertiaRequests extends Middleware
             'auth' => [
                 'user' => $request->user(),
                 'activePlan' => $this->activePlan(),
+                'userIsActive' => $request->user()->isActive
             ],
             'ziggy' => function () use ($request) {
                 return array_merge((new Ziggy)->toArray(), [
