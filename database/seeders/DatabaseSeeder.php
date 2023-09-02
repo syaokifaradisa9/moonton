@@ -4,7 +4,9 @@ namespace Database\Seeders;
 
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Database\Seeders\MovieSeeder;
 use Spatie\Permission\Models\Role;
+use Database\Seeders\SubcriptionPlanSeeder;
 
 class DatabaseSeeder extends Seeder
 {
@@ -20,5 +22,10 @@ class DatabaseSeeder extends Seeder
         ]);
 
         $user->assignRole('admin');
+
+        $this->call([
+            SubcriptionPlanSeeder::class,
+            MovieSeeder::class,
+        ]);
     }
 }
