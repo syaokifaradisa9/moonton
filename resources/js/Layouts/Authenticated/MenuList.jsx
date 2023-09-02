@@ -98,7 +98,7 @@ const UserOthers = [
                 />
             </svg>
         ),
-        text: "Payments",
+        text: "Payments"
     },
     {
         link: null,

@@ -34,7 +34,8 @@ export default function SideBar({ auth }){
                             isActive={
                                 menu.link && route().current(menu.link)
                             }
-                            method={menu.method}/>
+                            method={menu.method}
+                            isShow={(menu.text == "Payments") ? (auth.user.isActive ? true : false) : true}/>
                     ))}
                 </div>
                 {auth.activePlan && (
