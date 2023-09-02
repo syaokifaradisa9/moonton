@@ -1,5 +1,5 @@
 import React from "react"
-import TextInput from "@/Components/TextInput"
+import Input from "@/Components/Input"
 import Label from "@/Components/Label"
 import Button from "@/Components/Button"
 import { Link, Head } from "@inertiajs/react"
@@ -28,7 +28,7 @@ export default function Register(){
                         <div className="flex flex-col gap-6">
                             <div>
                                 <Label forInput="fullname" value="Full Name"/>
-                                <TextInput
+                                <Input
                                     type="text" 
                                     name="fullname"
                                     placeholder="Your fullname..." 
@@ -36,7 +36,7 @@ export default function Register(){
                             </div>
                             <div>
                                 <Label forInput="email" value="Email Address"/>
-                                <TextInput
+                                <Input
                                     type="text" 
                                     name="email"
                                     placeholder="Your fullname..." 
@@ -44,7 +44,7 @@ export default function Register(){
                             </div>
                             <div>
                                 <Label forInput="password" value="Password"/>
-                                <TextInput
+                                <Input
                                     type="text" 
                                     name="fullname"
                                     placeholder="Your password..."/>

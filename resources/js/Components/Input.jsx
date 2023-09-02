@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import PropTypes from 'prop-types';
 
-TextInput.propTypes = {
+Input.propTypes = {
     type: PropTypes.oneOf(["text", "email", "password", "number", "file"]),
     name: PropTypes.string,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
@@ -15,7 +15,7 @@ TextInput.propTypes = {
     isError: PropTypes.bool
 }
 
-export default function TextInput({
+export default function Input({
     type = "text",
     name,
     value,
