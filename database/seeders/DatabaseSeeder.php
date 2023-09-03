@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             SubcriptionPlanSeeder::class,
-            MovieSeeder::class,
+            // MovieSeeder::class,
         ]);
     }
 }
