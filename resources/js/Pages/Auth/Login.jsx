@@ -1,5 +1,5 @@
 import { React, useEffect } from "react"
-import TextInput from "@/Components/TextInput";
+import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import Button from "@/Components/Button";
 import ValidationErrors from '@/Components/ValidationErrors';
@@ -46,7 +46,7 @@ export default function Login(){
                         <div className="flex flex-col gap-6">
                             <div>
                                 <Label forInput="email" value="Email Address"/>
-                                <TextInput 
+                                <Input 
                                     type="email" 
                                     name="email" 
                                     placeholder="Email Address"
@@ -56,7 +56,7 @@ export default function Login(){
                             </div>
                             <div>
                                 <Label forInput="password" value="Password"/>
-                                <TextInput 
+                                <Input 
                                     type="password" 
                                     name="password" 
                                     placeholder="Password"

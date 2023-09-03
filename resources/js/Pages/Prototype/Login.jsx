@@ -1,5 +1,5 @@
 import React from "react"
-import TextInput from "@/Components/TextInput";
+import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import Button from "@/Components/Button";
 import { Link, Head } from "@inertiajs/react";
@@ -27,11 +27,11 @@ export default function Login(){
                         <div className="flex flex-col gap-6">
                             <div>
                                 <Label forInput="email" value="Email Address"/>
-                                <TextInput type="email" name="email" placeholder="Email Address"/>
+                                <Input type="email" name="email" placeholder="Email Address"/>
                             </div>
                             <div>
                                 <Label forInput="password" value="Password"/>
-                                <TextInput type="password" name="password" placeholder="Password"/>
+                                <Input type="password" name="password" placeholder="Password"/>
                             </div>
                         </div>
                         <div className="grid space-y-[14px] mt-[30px]">
