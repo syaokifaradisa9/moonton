@@ -2,22 +2,19 @@
 
 namespace App\Http\Controllers\Admin;
 
-use Exception;
 use Inertia\Inertia;
 use App\Models\Movie;
 use Illuminate\Support\Str;
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\Admin\Movie\Store;
-use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\Admin\Movie\Update;
 
 class MovieController extends Controller
 {
     public function index()
     {
-        $movies = Movie::all();
+        $movies = Movie::withTrashed()->orderBy('deleted_at')->get();
         return inertia('Admin/Movie/Index', [
             'movies' => $movies
         ]);
@@ -76,6 +73,19 @@ class MovieController extends Controller
 
     public function destroy(Movie $movie)
     {
-        //
+        $movie->delete();
+
+        session(['message' => 'Movie deleted successfully']);
+        session(['type' => 'success']);
+
+        return Inertia::location(route('admin.dashboard.movie.index'));
+    }
+
+    public function restore($id) {
+        Movie::withTrashed()->find($id)->restore();
+        session(['message' => 'Movie restored successfully']);
+        session(['type' => 'success']);
+
+        return Inertia::location(route('admin.dashboard.movie.index'));
     }
 }
